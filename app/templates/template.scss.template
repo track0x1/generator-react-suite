@@ -1,0 +1,6 @@
+// Stylesheet for <%= componentName %> Component
+@import '<%= cssPath %>';
+
+.<%= componentName %> {
+    display: block;
+}

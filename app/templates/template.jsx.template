@@ -1,0 +1,57 @@
+import React from 'react';
+
+import './<%= componentName %>.scss';
+
+/**
+ * <%= componentName %> class.
+ * @class <%= componentName %>
+ * @augments React.Component
+ */
+const <%= componentName %> = React.createClass(/** @lends <%= componentName %>.prototype */{
+    /**
+     * @property {String} displayName - A string used in debugging messages.
+     */
+    displayName: '<%= componentName %>',
+
+    /**
+     * @property {Object} propTypes - An object used to validate props being passed into the components
+     */
+    propTypes: {
+<%  for(var i = 0, z = propsWithType.length; i < z; i++) { if ((i+1) != z) { -%>
+        <%- propsWithType[i].name -%>: <%- propsWithType[i].type %>,
+<%  } else { -%>
+        <%- propsWithType[i].name -%>: <%- propsWithType[i].type %>
+<%  } -%>
+<%  } -%>
+    },
+<% if(propsWithVal.length > 0) { %>
+    /**
+     * Returns the default values for props in the component.
+     * @method getDefaultProps
+     * @return {Object}
+     */
+    getDefaultProps() {
+        return {
+<%  for(var i = 0, z = propsWithVal.length; i < z; i++) { if ((i+1) != z) { -%>
+            <%- propsWithVal[i].name -%>: <%- propsWithVal[i].val %>,
+<%  } else { -%>
+            <%- propsWithVal[i].name -%>: <%- propsWithVal[i].val %>
+<%  } -%>
+<%  } -%>
+        };
+    },
+<% } %>
+    /**
+     * Renders the component based on the properties passed in from a parent
+     * component and the component's state.
+     * @method render
+     * @return {ReactElement}
+     */
+    render() {
+        return (
+            <div className="<%= formattedComponentName %>" />
+        );
+    }
+});
+
+export default <%= componentName %>;

@@ -1,0 +1,29 @@
+{
+    "name": "generator-react-suite",
+    "homepage": "https://github.com/track0x1/generator-react-suite",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/track0x1/generator-react-suite.git"
+    },
+    "version": "1.0.1",
+    "keywords": [
+        "yeoman-generator",
+        "scaffold",
+        "framework",
+        "redux",
+        "react"
+    ],
+    "description": "Yeoman React Suite Generator",
+    "main": "app/index.js",
+    "private": false,
+    "author": "Tom Beute",
+    "contributors": [
+        "Tom Beute <beute.thomas@gmail.com>"
+    ],
+    "dependencies": {
+        "lodash": "^4.6.1",
+        "path": "^0.12.7",
+        "yeoman-generator": "^0.20.3"
+    },
+    "license": "MIT"
+}
